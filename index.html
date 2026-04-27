@@ -7,11 +7,11 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="theme-color" content="#1d4ed8">
-    <title>Kas Saku v1.15.17</title>
-	<link rel="icon" type="image/png" href="logo.png?v1.15.17">
-	<link rel="shortcut icon" type="image/png" href="logo.png?v1.15.17">
+    <title>Kas Saku v1.15.18</title>
+	<link rel="icon" type="image/png" href="logo.png?v1.15.18">
+	<link rel="shortcut icon" type="image/png" href="logo.png?v1.15.18">
 
-	<link rel="apple-touch-icon" href="logo.png?v1.15.17">
+	<link rel="apple-touch-icon" href="logo.png?v1.15.18">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -153,7 +153,7 @@
 
 			<div class="flex flex-col items-end gap-2">
 				<div class="flex items-center gap-2">	
-					<span class="text-[12px] bg-blue-50 text-blue-500 px-2 py-0.5 rounded-full border border-blue-100 font-bold">v1.15.17</span>
+					<span class="text-[12px] bg-blue-50 text-blue-500 px-2 py-0.5 rounded-full border border-blue-100 font-bold">v1.15.18</span>
 				</div>
 				<div class="absolute -right-4 -bottom-4 opacity-10 text-7xl pointer-events-none ">📝</div>
 			</div>
@@ -172,7 +172,7 @@
 				<h2 class="text-lg font-black text-gray-800 leading-tight">Selamat Datang Di Kas Saku!</h2>
 				<p class="text-[11px] text-gray-500 font-bold uppercase tracking-wider mt-1 mb-5">Siap mengelola kas hari ini?</p>
 				
-				<button onclick="pilihBuku(bukuAktif)" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-lg shadow-blue-200 active:scale-95 transition-all flex items-center justify-center gap-3">
+				<button onclick="getarTombol(); pilihBuku(bukuAktif)" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-lg shadow-blue-200 active:scale-95 transition-all flex items-center justify-center gap-3">
 					<span>MULAI PILIH BUKU KAS</span>
 					<i class="fas fa-arrow-right text-[10px]"></i>
 				</button>
@@ -181,13 +181,13 @@
 			<div id="konten-utama-buku" class="hidden">
 				
 				<div class="flex gap-2 mb-4 overflow-x-auto pb-2">
-					<button onclick="pilihBuku('lingkungan')" id="btn-lingkungan" class="flex-1 bg-blue-700 text-white text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-blue-900 leading-tight">
+					<button onclick="getarTombol(); pilihBuku('lingkungan')" id="btn-lingkungan" class="flex-1 bg-blue-700 text-white text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-blue-900 leading-tight">
 						<i class="fas fa-users block mb-1 text-sm"></i> KAS LINGKUNGAN
 					</button>
-					<button onclick="pilihBuku('mushola')" id="btn-mushola" class="flex-1 bg-white text-gray-500 text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-gray-300 leading-tight">
+					<button onclick="getarTombol(); pilihBuku('mushola')" id="btn-mushola" class="flex-1 bg-white text-gray-500 text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-gray-300 leading-tight">
 						<i class="fas fa-mosque block mb-1 text-sm"></i> KAS MUSHOLA
 					</button>
-					<button onclick="pilihBuku('ziarah')" id="btn-ziarah" class="flex-1 bg-white text-gray-500 text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-gray-300 leading-tight">
+					<button onclick="getarTombol(); pilihBuku('ziarah')" id="btn-ziarah" class="flex-1 bg-white text-gray-500 text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-gray-300 leading-tight">
 						<i class="fas fa-bus block mb-1 text-sm"></i> TAB. ZIARAH
 					</button>
 				</div>
@@ -209,7 +209,7 @@
 							</div>
 						</div>
 
-						<button id="btn-tutup-buku" onclick="prosesTutupBuku()" class="hidden bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-lg shadow-red-300/50 active:scale-95 transition-all flex items-center border-b-4 border-red-800">
+						<button id="getarTombol(); btn-tutup-buku" onclick="prosesTutupBuku()" class="hidden bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-lg shadow-red-300/50 active:scale-95 transition-all flex items-center border-b-4 border-red-800">
 							<span class="relative flex h-2.5 w-2.5 mr-2">
 								<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
 								<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
@@ -331,7 +331,7 @@
 			<div class="bg-white m-4 p-4 rounded-2xl shadow-sm">
 				<h3 class="text-xs font-black text-gray-400 mb-4 uppercase tracking-widest">Database</h3>
 				<div class="space-y-3">
-					<button onclick="eksporDatabase()" class="w-full flex items-center justify-between p-3 bg-blue-50 rounded-xl text-blue-600 active:scale-95 transition-transform">
+					<button onclick="getarTombol(); eksporDatabase()" class="w-full flex items-center justify-between p-3 bg-blue-50 rounded-xl text-blue-600 active:scale-95 transition-transform">
 						<div class="flex items-center gap-3">
 							<i class="fas fa-file-export text-lg"></i>
 							<span class="text-sm font-bold">Ekspor Database</span>
@@ -339,7 +339,7 @@
 							<i class="fas fa-chevron-right text-xs opacity-50"></i>
 					</button>
 
-					<button onclick="document.getElementById('input-file-import').click()" class="w-full flex items-center justify-between p-3 bg-orange-50 rounded-xl text-orange-600 active:scale-95 transition-transform">
+					<button onclick="getarTombol(); document.getElementById('input-file-import').click()" class="w-full flex items-center justify-between p-3 bg-orange-50 rounded-xl text-orange-600 active:scale-95 transition-transform">
 						<div class="flex items-center gap-3">
 							<i class="fas fa-file-import text-lg"></i>
 							<span class="text-sm font-bold">Impor Database</span>
@@ -348,7 +348,7 @@
 					</button>
 						<input type="file" id="input-file-import" class="hidden" accept=".json" onchange="imporDatabase(event)">	
 				
-					<button id="modal-kelola-db" onclick="bukaModalHapusPilihan()" class="w-full mt-3 flex items-center justify-between p-3 bg-red-50 rounded-xl text-red-600 active:scale-95 transition-transform">
+					<button id="getarTombol(); modal-kelola-db" onclick="bukaModalHapusPilihan()" class="w-full mt-3 flex items-center justify-between p-3 bg-red-50 rounded-xl text-red-600 active:scale-95 transition-transform">
 						<div class="flex items-center gap-3">
 							<i class="fas fa-database text-lg"></i>
 							<span class="text-sm font-bold">Kelola Database</span>
@@ -372,12 +372,12 @@
 					<div class="flex gap-2">
 						<input type="tel" id="input-wa-anggota" placeholder="NOMOR WA (CONTOH: 62812...)" class="flex-1 p-3 rounded-xl border-none text-xs font-bold shadow-sm focus:ring-2 focus:ring-blue-500">
         
-						<button onclick="importKontak()" class="bg-white text-blue-600 px-4 rounded-xl border border-blue-200 text-[10px] font-black shadow-sm active:bg-blue-100">
+						<button onclick="getarTombol(); importKontak()" class="bg-white text-blue-600 px-4 rounded-xl border border-blue-200 text-[10px] font-black shadow-sm active:bg-blue-100">
 							<i class="fas fa-address-book text-sm"></i>
 						</button>
 					</div>
 
-						<button onclick="tambahAnggota()" class="w-full py-3 bg-blue-600 text-white rounded-xl text-xs font-black uppercase tracking-widest shadow-md active:scale-95 transition-transform">
+						<button onclick="getarTombol(); tambahAnggota()" class="w-full py-3 bg-blue-600 text-white rounded-xl text-xs font-black uppercase tracking-widest shadow-md active:scale-95 transition-transform">
 							SIMPAN ANGGOTA
 						</button>
 				
@@ -393,24 +393,24 @@
 	
 	
 	<nav id="main-nav">
-		<button onclick="openTab(event, 'buku')" class="tab-link active-tab">
+		<button onclick="getarTombol(); openTab(event, 'buku')" class="tab-link active-tab">
 			<i class="fas fa-book-open text-xl"></i>
 			<span>BUKU</span>
 		</button>
-		<button onclick="openTab(event, 'dompet')" class="tab-link">
+		<button onclick="getarTombol(); openTab(event, 'dompet')" class="tab-link">
 			<i class="fas fa-wallet text-xl"></i>
 			<span>DOMPET</span>
 		</button>
 
-		<div id="smart-plus-btn" onclick="handleSmartAction()" class="center-btn">
+		<div id="smart-plus-btn" onclick="getarTombol(); handleSmartAction()" class="center-btn">
 			<i class="fas fa-plus"></i>
 		</div>
 
-		<button onclick="openTab(event, 'laporan')" class="tab-link">
+		<button onclick="getarTombol(); openTab(event, 'laporan')" class="tab-link">
 			<i class="fas fa-chart-pie text-xl"></i>
 			<span>LAPORAN</span>
 		</button>
-		<button onclick="openTab(event, 'pengaturan')" class="tab-link">
+		<button onclick="getarTombol(); openTab(event, 'pengaturan')" class="tab-link">
 			<i class="fas fa-sliders-h text-xl"></i>
 			<span>SETELAN</span>
 		</button>
@@ -722,6 +722,15 @@
 						}
 					}
 				}
+
+			// 7. Untuk Fungsi memberi efek getar pada tombol
+				function getarTombol() {
+					// Cek apakah browser mendukung fitur getar
+					if (navigator.vibrate) {
+						// Getar selama 50 milidetik (halus sekali)
+						navigator.vibrate(50); 
+					}
+				}
 				
 				
 				
@@ -763,7 +772,7 @@
 				}
 				
 	
-		// --- TERMINAL NAVIGASI UTAMA (v1.15 Floating Version) ---
+		// --- TERMINAL NAVIGASI UTAMA (v1.15.18 Floating Version) ---
 			function openTab(evt, tabName) {
 				currentActiveTab = tabName; // Update status tab aktif saat ini
 
@@ -789,7 +798,7 @@
 						
 						// Gunakan requestAnimationFrame agar animasi selalu segar saat diklik
 						requestAnimationFrame(() => {
-							target.classList.add("active", "animate-scale-in");
+							target.classList.add("active", "animate-slide-up");
 						});
 
 						if (evt && evt.currentTarget) {
@@ -804,7 +813,7 @@
 				if (tabName === 'buku' && typeof renderData === "function") renderData();
 				if (tabName === 'setelan' && typeof renderAnggotaSetelan === "function") renderAnggotaSetelan();
 
-				if (navigator.vibrate) navigator.vibrate(5);
+				if (navigator.vibrate) navigator.vibrate(10);
 			}
 
 			// 3. Logika Tombol Smart Plus (Pusat Kendali)
@@ -843,7 +852,7 @@
 				
 				// Arahkan ke modal masing-masing yang sudah Bapak punya
 				if (jenis === 'hutang') {
-					bukaModalHutang(); // Pastikan nama fungsi sesuai kode v1.14/v1.15 Bapak
+					bukaModalHutang(); // Pastikan nama fungsi sesuai kode v1.15.18 Bapak
 				} 
 				else if (jenis === 'bank') {
 					bukaModalBank();
@@ -1134,7 +1143,7 @@
 						listContainer.innerHTML = daftarNama.length === 0 
 							? '<p class="text-center text-xs text-gray-400 p-8">Belum ada anggota.</p>' 
 							: daftarNama.map(nama => `
-								<div onclick="bukaRiwayatAnggota('${nama}')" class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-500 flex justify-between items-center mb-2 active:scale-95 transition-transform">
+								<div onclick="getarTombol(); bukaRiwayatAnggota('${nama}')" class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-500 flex justify-between items-center mb-2 active:scale-95 transition-transform">
 								<div><p class="text-[10px] text-gray-400 font-bold uppercase">Anggota Ziarah</p><p class="text-xs font-bold text-gray-700 uppercase">${nama}</p></div>
 								<div class="text-right flex items-center gap-3"><div><p class="text-[10px] text-gray-400 font-bold">SALDO</p><p class="text-sm font-bold text-blue-600">Rp ${formatRupiah(rekap[nama])}</p></div><i class="fas fa-chevron-right text-[10px] text-gray-300"></i></div>
 								</div>`).join('');
@@ -1155,7 +1164,7 @@
 						const borderSide = isArsipSaldo ? 'border-gray-300' : (t.tipe === 'masuk' ? 'border-green-500' : 'border-red-500');
 
 						return `
-							<div onclick="${klikAction}" class="bg-white p-3 rounded-lg shadow-sm border-l-4 ${borderSide} flex justify-between items-center mb-2 active:scale-95 transition-all cursor-pointer ${isArsipSaldo ? 'opacity-60' : ''}">
+							<div onclick="getarTombol(); ${klikAction}" class="bg-white p-3 rounded-lg shadow-sm border-l-4 ${borderSide} flex justify-between items-center mb-2 active:scale-95 transition-all cursor-pointer ${isArsipSaldo ? 'opacity-60' : ''}">
 								<div>
 									<div class="flex items-center gap-1">
 										<p class="text-[10px] text-gray-400 font-bold">${t.tanggal}</p>
@@ -1179,7 +1188,7 @@
 			}
 	
 		
-		// --- FUNGSI PROSES TUTUP BUKU (v1.15.17 - Full Anti-Double Bulanan & Tahunan) ---
+		// --- FUNGSI PROSES TUTUP BUKU (v1.15.18 - Full Anti-Double Bulanan & Tahunan) ---
 			function prosesTutupBuku() {
 				const tahunSekarang = parseInt(periodeAktif.tahun);
 				const bulanSekarang = parseInt(periodeAktif.bulan);
@@ -1252,7 +1261,7 @@
 			}
 	
 	
-		// --- FUNGSI PILIH BUKU (v1.15 Updated) ---
+		// --- FUNGSI PILIH BUKU (v1.15.18 Updated) ---
 			function pilihBuku(jenis) {
 				bukuAktif = jenis;
 
@@ -1264,11 +1273,11 @@
 				if (panelWelcome) panelWelcome.classList.add('hidden');
 				if (kontenUtama) {
 					kontenUtama.classList.remove('hidden');
-					kontenUtama.classList.add('animate-scale-in'); // Tambah animasi biar halus
+					kontenUtama.classList.add('animate-slide-up'); // Tambah animasi biar halus
 
 					// Gunakan requestAnimationFrame agar animasi selalu segar saat diklik
 						requestAnimationFrame(() => {
-							kontenUtama.classList.add("active", "animate-scale-in");
+							kontenUtama.classList.add("active", "animate-slide-up");
 						});
 				}
 
@@ -1752,10 +1761,10 @@
 							</div>
 						</div>
 						<div class="flex gap-1.5">
-							<button onclick="siapkanEditZiarah(${t.id})" class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center active:scale-90">
+							<button onclick="getarTombol(); siapkanEditZiarah(${t.id})" class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center active:scale-90">
 								<i class="fas fa-edit text-[10px]"></i>
 							</button>
-							<button onclick="eksekusiHapusZiarah(${t.id}, '${nama}')" class="w-8 h-8 rounded-xl bg-red-50 text-red-400 flex items-center justify-center active:scale-90">
+							<button onclick="getarTombol(); eksekusiHapusZiarah(${t.id}, '${nama}')" class="w-8 h-8 rounded-xl bg-red-50 text-red-400 flex items-center justify-center active:scale-90">
 								<i class="fas fa-trash text-[10px]"></i>
 							</button>
 						</div>
@@ -1770,7 +1779,7 @@
 									<h3 class="font-black text-gray-700 text-[10px] uppercase tracking-widest">RIWAYAT TABUNGAN</h3>
 									<p class="text-xs font-black text-blue-600 uppercase">${nama}</p>
 								</div>
-								<button onclick="document.getElementById('modal-detail-riwayat').remove()" class="w-8 h-8 flex items-center justify-center bg-gray-50 rounded-full text-gray-400">
+								<button onclick="getarTombol(); document.getElementById('modal-detail-riwayat').remove()" class="w-8 h-8 flex items-center justify-center bg-gray-50 rounded-full text-gray-400">
 									<i class="fas fa-times text-xs"></i>
 								</button>
 							</div>
@@ -1779,11 +1788,11 @@
 							</div>
 
 							<div class="flex gap-2 mt-5">
-								<button onclick="kirimWATab('${nama}')" class="flex-1 bg-green-600 text-white py-3 rounded-2xl font-black text-[10px] uppercase flex items-center justify-center active:scale-95 transition-all shadow-lg shadow-green-100">
+								<button onclick="getarTombol(); kirimWATab('${nama}')" class="flex-1 bg-green-600 text-white py-3 rounded-2xl font-black text-[10px] uppercase flex items-center justify-center active:scale-95 transition-all shadow-lg shadow-green-100">
 									<i class="fab fa-whatsapp mr-2 text-sm"></i> Kirim Tabungan
 								</button>
 								
-								<button onclick="document.getElementById('modal-detail-riwayat').remove()" class="flex-1 bg-gray-100 text-gray-600 py-3 rounded-2xl font-black text-[10px] uppercase active:scale-95 transition-all">
+								<button onclick="getarTombol(); document.getElementById('modal-detail-riwayat').remove()" class="flex-1 bg-gray-100 text-gray-600 py-3 rounded-2xl font-black text-[10px] uppercase active:scale-95 transition-all">
 									Tutup Riwayat
 								</button>
 							</div>
@@ -1921,7 +1930,7 @@ ${rincian}
 
 _Terima kasih sudah menabung._
 _Simpan pesan ini sebagai bukti sah._
-_Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
+_Pesan dicatat via Aplikasi Kas Saku v1.15.18_`;
 
 				// 7. Eksekusi Kirim (Gunakan encodeURIComponent agar simbol aman)
 				const url = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
@@ -2227,11 +2236,11 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 							</div>
 							
 							<div class="flex gap-1">
-								<button onclick="bukaModalBayarHutang(${h.id})" class="w-8 h-8 bg-green-100 text-green-600 rounded-xl flex items-center justify-center active:scale-90 transition-all shadow-sm shadow-green-100">
+								<button onclick="getarTombol(); bukaModalBayarHutang(${h.id})" class="w-8 h-8 bg-green-100 text-green-600 rounded-xl flex items-center justify-center active:scale-90 transition-all shadow-sm shadow-green-100">
 									<i class="fas fa-hand-holding-dollar text-sm"></i>
 								</button>
 
-								<button onclick="hapusHutang(${h.id})" class="w-8 h-8 bg-red-50 text-red-400 rounded-xl flex items-center justify-center active:scale-90 transition-all">
+								<button onclick="getarTombol(); hapusHutang(${h.id})" class="w-8 h-8 bg-red-50 text-red-400 rounded-xl flex items-center justify-center active:scale-90 transition-all">
 									<i class="fas fa-trash-alt text-[10px]"></i>
 								</button>
 							</div>
@@ -2325,12 +2334,12 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				if (!modal) return;
 
 				// Tambahkan class animasi keluar (kita buat di CSS bawah)
-				modal.classList.add('animate-scale-out');
+				modal.classList.add('animate-slide-down');
 
 				// Tunggu 200ms (durasi animasi) baru sembunyikan total
 				setTimeout(() => {
 					modal.classList.add('hidden');
-					modal.classList.remove('animate-scale-out');
+					modal.classList.remove('animate-slide-down');
 				}, 200);
 			}
 			
@@ -2384,12 +2393,12 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				if (!modal) return;
 
 				// Tambahkan class animasi keluar (kita buat di CSS bawah)
-				modal.classList.add('animate-scale-out');
+				modal.classList.add('animate-slide-down');
 
 				// Tunggu 200ms (durasi animasi) baru sembunyikan total
 				setTimeout(() => {
 					modal.classList.add('hidden');
-					modal.classList.remove('animate-scale-out');
+					modal.classList.remove('animate-slide-down');
 				}, 200);
 			}
 
@@ -2488,10 +2497,10 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 							</div>
 							
 							<div class="flex gap-1">
-								<button onclick="editBank(${b.id})" class="w-8 h-8 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center active:scale-90 transition-all">
+								<button onclick="getarTombol(); editBank(${b.id})" class="w-8 h-8 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center active:scale-90 transition-all">
 									<i class="fas fa-pencil-alt text-[10px]"></i>
 								</button>
-								<button onclick="hapusBank(${b.id})" class="w-8 h-8 bg-red-50 text-red-400 rounded-xl flex items-center justify-center active:scale-90 transition-all">
+								<button onclick="getarTombol(); hapusBank(${b.id})" class="w-8 h-8 bg-red-50 text-red-400 rounded-xl flex items-center justify-center active:scale-90 transition-all">
 									<i class="fas fa-trash-alt text-[10px]"></i>
 								</button>
 							</div>
@@ -2534,7 +2543,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				modal.classList.add('flex'); // WAJIB ADA agar items-center & justify-center jalan
 				
 				// 2. Tambahkan animasi masuk (opsional jika sudah ada di CSS)
-				modal.classList.add('animate-scale-in'); 
+				modal.classList.add('animate-slide-up'); 
 
 				// 3. Reset form ke kondisi awal
 				document.querySelectorAll('.input-pecahan').forEach(input => input.value = "");
@@ -2559,13 +2568,13 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 
 				if (modal) {
 					// 1. Jalankan animasi keluar (JANGAN tambahkan 'hidden' dulu di sini)
-					modal.classList.add('animate-scale-out');
+					modal.classList.add('animate-slide-down');
 
 					// 2. Tunggu animasi selesai (200ms) baru benar-benar sembunyikan
 					setTimeout(() => {
 						modal.classList.add('hidden');
 						modal.classList.remove('flex'); // Hapus flex agar tidak menutupi layar
-						modal.classList.remove('animate-scale-out');
+						modal.classList.remove('animate-slide-down');
 						
 						// 3. Reset state di dalam modal
 						if (listKalkulator) listKalkulator.classList.add('hidden');
@@ -2713,10 +2722,10 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 								<p class="text-xs font-black text-orange-600">Rp ${formatRupiah(t.nominal)}</p>
 							</div>
 							<div class="flex gap-1">
-								<button onclick="editTunai(${t.id})" class="w-8 h-8 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center active:scale-90 transition-all shadow-sm">
+								<button onclick="getarTombol(); editTunai(${t.id})" class="w-8 h-8 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center active:scale-90 transition-all shadow-sm">
 									<i class="fas fa-edit text-[10px]"></i>
 								</button>
-								<button onclick="hapusTunai(${t.id})" class="w-8 h-8 bg-red-50 text-red-400 rounded-xl flex items-center justify-center active:scale-90 transition-all">
+								<button onclick="getarTombol(); hapusTunai(${t.id})" class="w-8 h-8 bg-red-50 text-red-400 rounded-xl flex items-center justify-center active:scale-90 transition-all">
 									<i class="fas fa-trash-alt text-[10px]"></i>
 								</button>
 							</div>
@@ -2924,12 +2933,12 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				if (!modal) return;
 
 				// Tambahkan class animasi keluar (kita buat di CSS bawah)
-				modal.classList.add('animate-scale-out');
+				modal.classList.add('animate-slide-down');
 
 				// Tunggu 200ms (durasi animasi) baru sembunyikan total
 				setTimeout(() => {
 					modal.classList.add('hidden');
-					modal.classList.remove('animate-scale-out');
+					modal.classList.remove('animate-slide-down');
 				}, 200);
 			}
 		
@@ -2949,7 +2958,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 					return;
 				}
 
-				// 2. Header Pesan (v1.15.17 Style)
+				// 2. Header Pesan (v1.15.18 Style)
 				let pesan = `*[ LAPORAN KAS ${buku} ]*\n`;
 				pesan += `*PERIODE: ${periode}*\n\n`;
 				pesan += `========== RINCIAN KAS ==========\n\n`;
@@ -2981,7 +2990,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				pesan += `*TOTAL MASUK : Rp ${formatRupiah(totalMasuk)}*\n`;
 				pesan += `*TOTAL KELUAR : Rp ${formatRupiah(totalKeluar)}*\n`;
 				pesan += `*SALDO AKHIR : Rp ${formatRupiah(totalMasuk - totalKeluar)}*\n\n`;
-				pesan += `_Laporan dicatat via Aplikasi Kas Saku v1.15.17_\n\n`;
+				pesan += `_Laporan dicatat via Aplikasi Kas Saku v1.15.18_\n\n`;
 
 				// 6. Kirim ke WA (Gunakan window.open agar lebih stabil di Mobile)
 				const urlWA = `https://wa.me/?text=${encodeURIComponent(pesan)}`;
@@ -3000,7 +3009,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 					const backupData = {
 						metadata: {
 							aplikasi: "Kas Saku",
-							versi: "v1.15.17",
+							versi: "v1.15.18",
 							waktu: new Date().toLocaleString('id-ID')
 						},
 						// Mengambil dari variabel global yang Bapak pakai di saveAllData
@@ -3105,12 +3114,12 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 
 				// Jalankan animasi keluar
 				content.classList.remove('animate-scale-in', 'animate-slide-up');
-				content.classList.add('animate-scale-out');
+				content.classList.add('animate-slide-down');
 
 				// Tunggu animasi selesai (0.2 detik sesuai CSS Bapak) baru sembunyikan
 				setTimeout(() => {
 					modal.classList.add('hidden');
-					content.classList.remove('animate-scale-out');
+					content.classList.remove('animate-slide-down');
 				}, 180);
 			}
 
@@ -3279,7 +3288,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 								${a.wa || '<span class="text-gray-300">Belum ada nomor</span>'}
 							</p>
 						</div>
-						<button onclick="hapusAnggota(${i})" class="w-10 h-10 flex items-center justify-center text-red-300 hover:text-red-500 transition-colors">
+						<button onclick="getarTombol(); hapusAnggota(${i})" class="w-10 h-10 flex items-center justify-center text-red-300 hover:text-red-500 transition-colors">
 							<i class="fas fa-trash-alt text-sm"></i>
 						</button>
 					</div>
@@ -3384,10 +3393,10 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				</div>
 
 				<div class="space-y-2">
-					<button onclick="simpanPeriode()" class="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-xl font-bold shadow-lg active:scale-95 transition-all uppercase text-xs">
+					<button onclick="getarTombol(); simpanPeriode()" class="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-xl font-bold shadow-lg active:scale-95 transition-all uppercase text-xs">
 						TERAPKAN PERIODE
 					</button>
-					<button onclick="tutupModalPeriode()" class="w-full text-gray-400 text-[10px] font-bold py-2 uppercase tracking-widest">
+					<button onclick="getarTombol(); tutupModalPeriode()" class="w-full text-gray-400 text-[10px] font-bold py-2 uppercase tracking-widest">
 						BATAL
 					</button>
 				</div>
@@ -3397,22 +3406,22 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 	
 	
 	<div id="modal-input" class="hidden fixed inset-0 bg-black/60 z-[250] flex items-center justify-center p-4">
-		<div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl animate-scale-in">
+		<div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl animate-slide-up">
 			<div class="bg-blue-600 p-4 text-white flex justify-between items-center">
 				<div>
 					<h3 id="modal-title" class="font-black uppercase text-xs tracking-widest flex items-center">
 						<i class="fas fa-edit mr-2"></i> Tambah Transaksi
 					</h3>
 				</div>
-				<button onclick="tutupModal()" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-all">
+				<button onclick="getarTombol(); tutupModal()" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-all">
 					<i class="fas fa-times"></i>
 				</button>
 			</div>
 			
 			<div class="p-5 space-y-4 max-h-[80vh] overflow-y-auto">
 				<div class="flex gap-2 p-1 bg-gray-100 rounded-2xl">
-					<button onclick="setTipe('masuk')" id="btn-tipe-masuk" class="flex-1 py-2.5 rounded-xl font-black text-[10px] uppercase transition-all bg-green-600 text-white shadow-sm">PEMASUKAN</button>
-					<button onclick="setTipe('keluar')" id="btn-tipe-keluar" class="flex-1 py-2.5 rounded-xl font-black text-[10px] uppercase transition-all bg-transparent text-gray-500">PENGELUARAN</button>
+					<button onclick="getarTombol(); setTipe('masuk')" id="btn-tipe-masuk" class="flex-1 py-2.5 rounded-xl font-black text-[10px] uppercase transition-all bg-green-600 text-white shadow-sm">PEMASUKAN</button>
+					<button onclick="getarTombol(); setTipe('keluar')" id="btn-tipe-keluar" class="flex-1 py-2.5 rounded-xl font-black text-[10px] uppercase transition-all bg-transparent text-gray-500">PENGELUARAN</button>
 				</div>
 				
 				<div class="grid grid-cols-1 gap-3">
@@ -3430,15 +3439,15 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 						<label class="text-[9px] font-black text-gray-400 uppercase ml-1 block mb-2">Shortcut Mushola</label>
 						<div id="group-masuk-mushola" class="mb-3 hidden">
 							<div class="flex flex-wrap gap-2">
-								<button type="button" onclick="setTemplateMushola('WARGA')" class="text-[9px] bg-green-50 text-green-600 px-3 py-2 rounded-lg font-bold border border-green-100 uppercase">AMAL WARGA</button>
-								<button type="button" onclick="setTemplateMushola('AMAL')" class="text-[9px] bg-green-50 text-green-600 px-3 py-2 rounded-lg font-bold border border-green-100 uppercase">AMAL (NAMA)</button>
+								<button type="button" onclick="getarTombol(); setTemplateMushola('WARGA')" class="text-[9px] bg-green-50 text-green-600 px-3 py-2 rounded-lg font-bold border border-green-100 uppercase">AMAL WARGA</button>
+								<button type="button" onclick="getarTombol(); setTemplateMushola('AMAL')" class="text-[9px] bg-green-50 text-green-600 px-3 py-2 rounded-lg font-bold border border-green-100 uppercase">AMAL (NAMA)</button>
 							</div>
 						</div>
 
 						<div id="group-keluar-mushola" class="mb-3 hidden">
 							<div class="flex flex-wrap gap-2">
-								<button type="button" onclick="setTemplateMushola('BELI')" class="text-[9px] bg-red-50 text-red-600 px-3 py-2 rounded-lg font-bold border border-red-100 uppercase">BELI</button>
-								<button type="button" onclick="setTemplateMushola('KEGIATAN')" class="text-[9px] bg-red-50 text-red-600 px-3 py-2 rounded-lg font-bold border border-red-100 uppercase">KEGIATAN</button>
+								<button type="button" onclick="getarTombol(); setTemplateMushola('BELI')" class="text-[9px] bg-red-50 text-red-600 px-3 py-2 rounded-lg font-bold border border-red-100 uppercase">BELI</button>
+								<button type="button" onclick="getarTombol(); setTemplateMushola('KEGIATAN')" class="text-[9px] bg-red-50 text-red-600 px-3 py-2 rounded-lg font-bold border border-red-100 uppercase">KEGIATAN</button>
 							</div>
 						</div>
 					</div>
@@ -3447,19 +3456,19 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 							<label class="text-[9px] font-black text-gray-400 uppercase ml-1 block mb-2">Shortcut Lingkungan</label>
 							
 							<div id="group-masuk-lingkungan" class="flex flex-wrap gap-2 hidden">
-								<button type="button" onclick="bukaModalJimpitan()" class="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase active:scale-95 transition-all">
+								<button type="button" onclick="getarTombol(); bukaModalJimpitan()" class="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase active:scale-95 transition-all">
 									<i class="fas fa-coins mr-1"></i> Input Jimpitan Harian
 								</button>
 							</div>
 
 							<div id="group-keluar-lingkungan" class="flex flex-wrap gap-2 hidden">
-								<button type="button" onclick="setTemplateLingkungan('BELI')" class="bg-orange-100 text-orange-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase active:scale-95 transition-all">
+								<button type="button" onclick="getarTombol(); setTemplateLingkungan('BELI')" class="bg-orange-100 text-orange-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase active:scale-95 transition-all">
 									<i class="fas fa-shopping-cart mr-1"></i> Beli..
 								</button>
-								<button type="button" onclick="setTemplateLingkungan('KEGIATAN')" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase active:scale-95 transition-all">
+								<button type="button" onclick="getarTombol(); setTemplateLingkungan('KEGIATAN')" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase active:scale-95 transition-all">
 									<i class="fas fa-users mr-1"></i> Kegiatan..
 								</button>
-								<button type="button" onclick="setTemplateLingkungan('PAM')" class="bg-cyan-100 text-cyan-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase active:scale-95 transition-all">
+								<button type="button" onclick="getarTombol(); setTemplateLingkungan('PAM')" class="bg-cyan-100 text-cyan-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase active:scale-95 transition-all">
 									<i class="fas fa-tint mr-1"></i> PAM
 								</button>
 							</div>
@@ -3472,10 +3481,10 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 					<div>
 						<div id="area-shortcut-ziarah" class="hidden mb-2">
 							<div class="grid grid-cols-4 gap-2">
-								<button type="button" onclick="isiNominalCepat(10000)" class="bg-gray-100 text-gray-600 py-2 rounded-lg text-[9px] font-bold active:bg-blue-600 active:text-white transition-all">10k</button>
-								<button type="button" onclick="isiNominalCepat(20000)" class="bg-gray-100 text-gray-600 py-2 rounded-lg text-[9px] font-bold active:bg-blue-600 active:text-white transition-all">20k</button>
-								<button type="button" onclick="isiNominalCepat(50000)" class="bg-gray-100 text-gray-600 py-2 rounded-lg text-[9px] font-bold active:bg-blue-600 active:text-white transition-all">50k</button>
-								<button type="button" onclick="isiNominalCepat(100000)" class="bg-gray-100 text-gray-600 py-2 rounded-lg text-[9px] font-bold active:bg-blue-600 active:text-white transition-all">100k</button>
+								<button type="button" onclick="getarTombol(); isiNominalCepat(10000)" class="bg-gray-100 text-gray-600 py-2 rounded-lg text-[9px] font-bold active:bg-blue-600 active:text-white transition-all">10k</button>
+								<button type="button" onclick="getarTombol(); isiNominalCepat(20000)" class="bg-gray-100 text-gray-600 py-2 rounded-lg text-[9px] font-bold active:bg-blue-600 active:text-white transition-all">20k</button>
+								<button type="button" onclick="getarTombol(); isiNominalCepat(50000)" class="bg-gray-100 text-gray-600 py-2 rounded-lg text-[9px] font-bold active:bg-blue-600 active:text-white transition-all">50k</button>
+								<button type="button" onclick="getarTombol(); isiNominalCepat(100000)" class="bg-gray-100 text-gray-600 py-2 rounded-lg text-[9px] font-bold active:bg-blue-600 active:text-white transition-all">100k</button>
 							</div>
 						</div>
 						<label class="text-[9px] font-black text-gray-400 uppercase ml-1">Nominal (Rp)</label>
@@ -3484,7 +3493,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				</div>
 
 				<div class="pt-2 space-y-3">
-					<button onclick="simpanTransaksi()" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-xs uppercase shadow-lg shadow-blue-200 active:scale-95 transition-all">
+					<button onclick="getarTombol(); simpanTransaksi()" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black text-xs uppercase shadow-lg shadow-blue-200 active:scale-95 transition-all">
 						SIMPAN TRANSAKSI
 					</button>
 				</div>
@@ -3495,7 +3504,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 
 
 	<div id="modal-edit" class="hidden fixed inset-0 bg-black/60 z-[250] flex items-center justify-center p-4">
-		<div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl animate-scale-in">
+		<div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl animate-slide-up">
 			<div class="bg-gray-800 p-4 text-white flex justify-between items-center">
 				<div>
 					<h3 class="font-black uppercase text-xs tracking-widest flex items-center">
@@ -3503,7 +3512,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 					</h3>
 					<p class="text-[9px] opacity-80 font-bold uppercase">Ubah atau hapus data kas</p>
 				</div>
-				<button onclick="tutupModalEdit()" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-all">
+				<button onclick="getarTombol(); tutupModalEdit()" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-all">
 					<i class="fas fa-times"></i>
 				</button>
 			</div>
@@ -3535,12 +3544,12 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				</div>
 
 				<div class="flex gap-1 pt-1">
-					<button onclick="prosesHapus()" class="flex-1 bg-red-50 text-red-600 py-4 rounded-2xl font-black text-[10px] uppercase tracking-wider active:scale-95 transition-all flex flex-col items-center justify-center gap-1 border border-red-100">
+					<button onclick="getarTombol(); prosesHapus()" class="flex-1 bg-red-50 text-red-600 py-4 rounded-2xl font-black text-[10px] uppercase tracking-wider active:scale-95 transition-all flex flex-col items-center justify-center gap-1 border border-red-100">
 						<i class="fas fa-trash-alt text-lg"></i>
 						<span>Hapus</span>
 					</button>
 					
-					<button onclick="prosesUpdate()" class="flex-[2] bg-blue-600 text-white py-4 rounded-2xl font-black text-[10px] uppercase tracking-wider shadow-lg shadow-blue-200 active:scale-95 transition-all flex flex-col items-center justify-center gap-1">
+					<button onclick="getarTombol(); prosesUpdate()" class="flex-[2] bg-blue-600 text-white py-4 rounded-2xl font-black text-[10px] uppercase tracking-wider shadow-lg shadow-blue-200 active:scale-95 transition-all flex flex-col items-center justify-center gap-1">
 						<i class="fas fa-save text-lg"></i>
 						<span>Simpan Perubahan</span>
 					</button>
@@ -3558,11 +3567,11 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 		<div class="bg-white w-full max-w-sm rounded-t-3xl p-6 animate-slide-up">
 			<div class="flex justify-between items-center mb-6">
 				<h3 class="font-black text-gray-800 text-xs uppercase tracking-widest">Pilih Jenis Input</h3>
-				<button onclick="tutupMenuDompet()" class="text-gray-400"><i class="fas fa-times"></i></button>
+				<button onclick="getarTombol(); tutupMenuDompet()" class="text-gray-400"><i class="fas fa-times"></i></button>
 			</div>
 			
 			<div class="grid grid-cols-1 gap-3 mb-4">
-				<button onclick="aksiDompet('hutang')" class="flex items-center gap-4 p-4 bg-red-50 rounded-2xl border border-red-100 active:scale-95 transition-all">
+				<button onclick="getarTombol(); aksiDompet('hutang')" class="flex items-center gap-4 p-4 bg-red-50 rounded-2xl border border-red-100 active:scale-95 transition-all">
 					<div class="w-12 h-12 bg-red-600 text-white rounded-xl flex items-center justify-center shadow-lg">
 						<i class="fas fa-hand-holding-usd text-xl"></i>
 					</div>
@@ -3572,7 +3581,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 					</div>
 				</button>
 
-				<button onclick="aksiDompet('bank')" class="flex items-center gap-4 p-4 bg-green-50 rounded-2xl border border-green-100 active:scale-95 transition-all">
+				<button onclick="getarTombol(); aksiDompet('bank')" class="flex items-center gap-4 p-4 bg-green-50 rounded-2xl border border-green-100 active:scale-95 transition-all">
 					<div class="w-12 h-12 bg-green-600 text-white rounded-xl flex items-center justify-center shadow-lg">
 						<i class="fas fa-university text-xl"></i>
 					</div>
@@ -3582,7 +3591,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 					</div>
 				</button>
 
-				<button onclick="aksiDompet('tunai')" class="flex items-center gap-4 p-4 bg-blue-50 rounded-2xl border border-blue-100 active:scale-95 transition-all">
+				<button onclick="getarTombol(); aksiDompet('tunai')" class="flex items-center gap-4 p-4 bg-blue-50 rounded-2xl border border-blue-100 active:scale-95 transition-all">
 					<div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg">
 						<i class="fas fa-money-bill-wave text-xl"></i>
 					</div>
@@ -3593,17 +3602,17 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				</button>
 			</div>
 			
-			<button onclick="tutupMenuDompet()" class="w-full py-3 bg-gray-100 rounded-2xl border border-gray-100 text-gray-900 font-bold text-[15px] uppercase tracking-widest">Tutup Menu</button>
+			<button onclick="getarTombol(); tutupMenuDompet()" class="w-full py-3 bg-gray-100 rounded-2xl border border-gray-100 text-gray-900 font-bold text-[15px] uppercase tracking-widest">Tutup Menu</button>
 		</div>
 	</div>
 
 
 
 	<div id="modal-hutang" class="hidden fixed inset-0 bg-black bg-opacity-60 z-[300] flex items-center justify-center p-4">
-		<div class="bg-white w-full max-w-xs rounded-2xl p-5 shadow-2xl">
+		<div class="bg-white w-full max-w-xs rounded-2xl p-5 shadow-2xl animate-slide-up">
 			<div class="flex justify-between items-center mb-4 border-b pb-2">
 				<h3 class="font-black text-gray-700 text-xs uppercase"><i class="fas fa-hand-holding-usd mr-2 text-blue-600"></i>Input Pinjaman</h3>
-				<button onclick="tutupModalHutang()" class="text-gray-400"><i class="fas fa-times"></i></button>
+				<button onclick="getarTombol(); tutupModalHutang()" class="text-gray-400"><i class="fas fa-times"></i></button>
 			</div>
 			
 			<div class="space-y-3">
@@ -3635,17 +3644,17 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 			</div>
 
 			<div class="mt-5 grid grid-cols-2 gap-3">
-				<button onclick="tutupModalHutang()" class="bg-gray-100 text-gray-500 py-3 rounded-xl font-bold text-[10px] uppercase">Batal</button>
-				<button onclick="simpanHutang()" class="bg-blue-600 text-white py-3 rounded-xl font-bold text-[10px] uppercase shadow-lg shadow-blue-200">Simpan</button>
+				<button onclick="getarTombol(); tutupModalHutang()" class="bg-gray-100 text-gray-500 py-3 rounded-xl font-bold text-[10px] uppercase">Batal</button>
+				<button onclick="getarTombol(); simpanHutang()" class="bg-blue-600 text-white py-3 rounded-xl font-bold text-[10px] uppercase shadow-lg shadow-blue-200">Simpan</button>
 			</div>
 		</div>
 	</div>
 		
 	<div id="modal-bayar-hutang" class="hidden fixed inset-0 bg-black bg-opacity-60 z-[350] flex items-center justify-center p-4">
-		<div class="bg-white w-full max-w-xs rounded-2xl p-5 shadow-2xl">
+		<div class="bg-white w-full max-w-xs rounded-2xl p-5 shadow-2xl animate-slide-up">
 			<div class="flex justify-between items-center mb-4 border-b pb-2">
 				<h3 class="font-black text-gray-700 text-xs uppercase"><i class="fas fa-hand-holding-dollar mr-2 text-green-600"></i>Pelunasan Pinjaman</h3>
-				<button onclick="tutupModalBayar()" class="text-gray-400"><i class="fas fa-times"></i></button>
+				<button onclick="getarTombol(); tutupModalBayar()" class="text-gray-400"><i class="fas fa-times"></i></button>
 			</div>
 			
 			<div class="space-y-3">
@@ -3680,18 +3689,18 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 			</div>
 
 			<div class="mt-5 grid grid-cols-2 gap-3">
-				<button onclick="tutupModalBayar()" class="bg-gray-100 text-gray-500 py-3 rounded-xl font-bold text-[10px] uppercase">Batal</button>
-				<button onclick="prosesBayarHutang()" class="bg-green-600 text-white py-3 rounded-xl font-bold text-[10px] uppercase shadow-lg">Bayar</button>
+				<button onclick="getarTombol(); tutupModalBayar()" class="bg-gray-100 text-gray-500 py-3 rounded-xl font-bold text-[10px] uppercase">Batal</button>
+				<button onclick="getarTombol(); prosesBayarHutang()" class="bg-green-600 text-white py-3 rounded-xl font-bold text-[10px] uppercase shadow-lg">Bayar</button>
 			</div>
 		</div>
 	</div>
 
 
 	<div id="modal-bank" class="hidden fixed inset-0 bg-black bg-opacity-60 z-[300] flex items-center justify-center p-4">
-		<div class="bg-white w-full max-w-xs rounded-2xl p-5 shadow-2xl">
+		<div class="bg-white w-full max-w-xs rounded-2xl p-5 shadow-2xl animate-slide-up">
 			<div class="flex justify-between items-center mb-4 border-b pb-2">
 				<h3 class="font-black text-gray-700 text-xs uppercase"><i class="fas fa-university mr-2 text-green-600"></i>Update Saldo Bank</h3>
-				<button onclick="tutupModalBank()" class="text-gray-400"><i class="fas fa-times"></i></button>
+				<button onclick="getarTombol(); tutupModalBank()" class="text-gray-400"><i class="fas fa-times"></i></button>
 			</div>
 			
 			<div class="space-y-3">
@@ -3719,22 +3728,22 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 			</div>
 
 			<div class="mt-5 grid grid-cols-2 gap-3">
-				<button onclick="tutupModalBank()" class="bg-gray-100 text-gray-500 py-3 rounded-xl font-bold text-[10px] uppercase">Batal</button>
-				<button onclick="simpanBank()" class="bg-green-600 text-white py-3 rounded-xl font-bold text-[10px] uppercase shadow-lg shadow-green-200">Simpan</button>
+				<button onclick="getarTombol(); tutupModalBank()" class="bg-gray-100 text-gray-500 py-3 rounded-xl font-bold text-[10px] uppercase">Batal</button>
+				<button onclick="getarTombol(); simpanBank()" class="bg-green-600 text-white py-3 rounded-xl font-bold text-[10px] uppercase shadow-lg shadow-green-200">Simpan</button>
 			</div>
 		</div>
 	</div>
 	
 	<div id="modal-tunai" class="hidden fixed inset-0 bg-black bg-opacity-60 z-[400] items-center justify-center p-4">
-		<div class="bg-white w-full max-w-xs rounded-2xl p-5 shadow-2xl flex flex-col max-h-[90vh]">
+		<div class="bg-white w-full max-w-xs rounded-2xl p-5 shadow-2xl flex flex-col max-h-[90vh] animate-slide-up">
 			<div class="flex justify-between items-center mb-4 border-b pb-2">
 				<h3 class="font-black text-gray-700 text-xs uppercase"><i class="fas fa-calculator mr-2 text-orange-500"></i>Kalkulator Fisik</h3>
-				<button onclick="tutupModalTunai()" class="text-gray-400"><i class="fas fa-times"></i></button>
+				<button onclick="getarTombol(); tutupModalTunai()" class="text-gray-400"><i class="fas fa-times"></i></button>
 			</div>
 			
 			<div class="mb-4">
 				<label class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Pilih Kas Tunai</label>
-				<select id="tunai-buku" onchange="cekDuplikasiBuku(this.value)" class="w-full bg-gray-50 border-none rounded-xl p-3 text-sm font-bold uppercase outline-none focus:ring-2 focus:ring-orange-500">
+				<select id="tunai-buku" onchange="getarTombol(); cekDuplikasiBuku(this.value)" class="w-full bg-gray-50 border-none rounded-xl p-3 text-sm font-bold uppercase outline-none focus:ring-2 focus:ring-orange-500">
 					<option value="" disabled selected>-- PILIH KAS --</option>
 					<option value="KAS LINGKUNGAN (TUNAI)">KAS LINGKUNGAN (TUNAI)</option>
 					<option value="KAS MUSHOLA (TUNAI)">KAS MUSHOLA (TUNAI)</option>
@@ -3768,8 +3777,8 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 					<span id="total-hitung-fisik" class="text-lg font-black text-orange-600">Rp 0</span>
 				</div>
 				<div class="grid grid-cols-2 gap-3">
-					<button onclick="tutupModalTunai()" class="bg-gray-100 text-gray-500 py-3 rounded-xl font-bold text-[10px] uppercase">Batal</button>
-					<button onclick="simpanTunai()" class="bg-orange-500 text-white py-3 rounded-xl font-bold text-[10px] uppercase shadow-lg shadow-orange-200">Simpan Tunai</button>
+					<button onclick="getarTombol(); tutupModalTunai()" class="bg-gray-100 text-gray-500 py-3 rounded-xl font-bold text-[10px] uppercase">Batal</button>
+					<button onclick="getarTombol(); simpanTunai()" class="bg-orange-500 text-white py-3 rounded-xl font-bold text-[10px] uppercase shadow-lg shadow-orange-200">Simpan Tunai</button>
 				</div>
 			</div>
 		</div>
@@ -3778,13 +3787,13 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 
 
 	<div id="modal-rincian-laporan" class="fixed inset-0 bg-black/50 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
-		<div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+		<div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh] animate-slide-up">
 			<div class="p-4 bg-blue-600 text-white flex justify-between items-center">
 				<div>
 					<h3 class="font-black text-sm uppercase tracking-wider" id="rincian-judul-buku">RINCIAN TRANSAKSI</h3>
 					<p class="text-[10px] opacity-80 font-bold" id="rincian-sub-judul">Periode: 2026</p>
 				</div>
-				<button onclick="tutupModalRincian()" class="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+				<button onclick="getarTombol(); tutupModalRincian()" class="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
 					<i class="fas fa-times"></i>
 				</button>
 			</div>
@@ -3798,11 +3807,11 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				</p>
 
 				<div class="flex gap-2 w-full sm:w-auto">
-					<button onclick="kirimLaporanWA()" class="flex-1 sm:flex-none bg-green-600 text-white px-4 py-2.5 rounded-xl font-black text-[10px] uppercase flex items-center justify-center active:scale-95 transition-all">
+					<button onclick="getarTombol(); kirimLaporanWA()" class="flex-1 sm:flex-none bg-green-600 text-white px-4 py-2.5 rounded-xl font-black text-[10px] uppercase flex items-center justify-center active:scale-95 transition-all">
 						<i class="fab fa-whatsapp mr-2 text-sm"></i> Kirim Laporan
 					</button>
 
-					<button onclick="tutupModalRincian()" class="flex-1 sm:flex-none bg-gray-100 text-gray-600 px-6 py-2.5 rounded-xl font-black text-[10px] uppercase active:scale-95 transition-all">
+					<button onclick="getarTombol(); tutupModalRincian()" class="flex-1 sm:flex-none bg-gray-100 text-gray-600 px-6 py-2.5 rounded-xl font-black text-[10px] uppercase active:scale-95 transition-all">
 						Tutup Laporan
 					</button>
 				</div>
@@ -3813,7 +3822,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 
 
 	<div id="modal-hapus-pilihan" class="fixed inset-0 bg-black/50 hidden z-[100] flex items-center justify-center p-4">
-			<div class="bg-white rounded-3xl w-full max-w-xs overflow-hidden shadow-2xl animate-scale-in">
+			<div class="bg-white rounded-3xl w-full max-w-xs overflow-hidden shadow-2xl animate-slide-up">
 				<div class="bg-red-600 p-4 text-white">
 					<h3 class="font-black uppercase text-xs tracking-widest flex items-center">
 						<i class="fas fa-trash-alt mr-2"></i> Pilih Database
@@ -3826,8 +3835,8 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 						</div>
 
 					<div class="flex gap-2 pt-4">
-						<button onclick="tutupModalHapusPilihan()" class="flex-1 py-3 bg-gray-100 text-gray-500 rounded-xl font-bold text-[10px] uppercase">Batal</button>
-						<button onclick="eksekusiHapusTerpilih()" class="flex-1 py-3 bg-red-600 text-white rounded-xl font-bold text-[10px] uppercase shadow-lg shadow-red-200">Hapus Terpilih</button>
+						<button onclick="getarTombol(); tutupModalHapusPilihan()" class="flex-1 py-3 bg-gray-100 text-gray-500 rounded-xl font-bold text-[10px] uppercase">Batal</button>
+						<button onclick="getarTombol(); eksekusiHapusTerpilih()" class="flex-1 py-3 bg-red-600 text-white rounded-xl font-bold text-[10px] uppercase shadow-lg shadow-red-200">Hapus Terpilih</button>
 					</div>
 				</div>
 			</div>
@@ -3845,7 +3854,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 					</h3>
 					<p class="text-[9px] text-gray-400 font-bold italic" id="label-bulan-jimpitan">Rincian Per Tanggal</p>
 				</div>
-				<button onclick="tutupModalJimpitan()" class="w-8 h-8 flex items-center justify-center bg-gray-50 text-gray-400 rounded-full active:scale-90">
+				<button onclick="getarTombol(); tutupModalJimpitan()" class="w-8 h-8 flex items-center justify-center bg-gray-50 text-gray-400 rounded-full active:scale-90">
 					<i class="fas fa-times"></i>
 				</button>
 			</div>
@@ -3860,11 +3869,11 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 				</div>
 				
 				<div class="flex gap-2">
-					<button id="btn-hapus-jimpitan" onclick="hapusTotalJimpitan()" class="hidden bg-red-100 text-red-600 px-5 py-4 rounded-2xl font-bold active:scale-95 transition-all">
+					<button id="getarTombol(); btn-hapus-jimpitan" onclick="hapusTotalJimpitan()" class="hidden bg-red-100 text-red-600 px-5 py-4 rounded-2xl font-bold active:scale-95 transition-all">
 						<i class="fas fa-trash-alt"></i>
 					</button>
 					
-					<button onclick="pindahkanKeNominalUtama()" class="flex-1 bg-orange-500 text-white py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-lg shadow-orange-200 active:scale-95 transition-all flex items-center justify-center border-none">
+					<button onclick="getarTombol(); pindahkanKeNominalUtama()" class="flex-1 bg-orange-500 text-white py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-lg shadow-orange-200 active:scale-95 transition-all flex items-center justify-center border-none">
 						<i class="fas fa-arrow-right mr-2"></i> Simpan Jimpitan Terkumpul
 					</button>
 				</div>
@@ -3903,6 +3912,13 @@ _Pesan dicatat via Aplikasi Kas Saku v1.15.17_`;
 			to { transform: translateY(0); } 
 		}
 		.animate-slide-up { animation: slide-up 0.3s ease-out; }
+
+		/* Animasi Modal/Panel Slide Down */
+		@keyframes slide-down { 
+			from { transform: translateY(0); } 
+			to { transform: translateY(100%); } /* Tambahkan tanda % di sini */
+		}
+		.animate-slide-down { animation: slide-down 0.3s ease-in forwards; }
 	</style>
 	
 </body>
