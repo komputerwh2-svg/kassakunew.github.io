@@ -7,11 +7,11 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="theme-color" content="#1d4ed8">
-    <title>Kas Saku v1.16.2</title>
-	<link rel="icon" type="image/png" href="logo.png?v1.16.2">
-	<link rel="shortcut icon" type="image/png" href="logo.png?v1.16.2">
+    <title>Kas Saku v1.16.3</title>
+	<link rel="icon" type="image/png" href="logo.png?v1.16.3">
+	<link rel="shortcut icon" type="image/png" href="logo.png?v1.16.3">
 
-	<link rel="apple-touch-icon" href="logo.png?v1.16.2">
+	<link rel="apple-touch-icon" href="logo.png?v1.16.3">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -147,7 +147,7 @@
 			<div>
 				<h1 class="text-2xl font-black tracking-tight text-blue-600">
 					KAS <span class="text-gray-800">SAKU</span>
-					<span class="text-[8px] font-bold text-gray-400 tracking-widest">Powered by Gemini</span>
+					<span class="text-[8px] font-bold text-blue-400 tracking-widest">Powered by Gemini</span>
 				</h1>
 				
 				<div id="realtime-clock" class="text-[12px] bg-blue-50 text-blue-500 px-2 py-0.5 rounded-full border border-blue-700 font-bold">
@@ -157,9 +157,12 @@
 
 			<div class="flex flex-col items-end gap-2">
 				<div class="flex items-center gap-2">	
-					<span class="text-[12px] bg-blue-50 text-blue-500 px-2 py-0.5 rounded-full border border-blue-100 font-bold">v1.16.2</span>
+					<span class="text-[12px] bg-blue-50 text-blue-500 px-2 py-0.5 rounded-full border border-blue-100 font-bold">v1.16.3</span>
 				</div>
-				<div class="absolute -right-4 -bottom-4 opacity-10 text-7xl pointer-events-none ">📝</div>
+				<!-- Watermark Logo -->
+				<div class="absolute -right-8 -bottom-6 opacity-20 pointer-events-none transform rotate-12">
+					<img src="logo.png?v1.16.3" alt="" class="w-32 h-32 object-contain">
+				</div>
 			</div>
 		</div>
 	</header>
@@ -186,13 +189,13 @@
 				
 				<div class="flex gap-2 mb-4 overflow-x-auto pb-2">
 					<button onclick="getarTombol(); pilihBuku('lingkungan')" id="btn-lingkungan" class="flex-1 bg-blue-700 text-white text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-blue-900 leading-tight">
-						<i class="fas fa-users block mb-1 text-sm"></i> KAS LINGKUNGAN
+						<i class="fas fa-users block mb-1 text-sm font-orange text-orange-500"></i> KAS LINGKUNGAN
 					</button>
 					<button onclick="getarTombol(); pilihBuku('mushola')" id="btn-mushola" class="flex-1 bg-white text-gray-500 text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-gray-300 leading-tight">
-						<i class="fas fa-mosque block mb-1 text-sm"></i> KAS MUSHOLA
+						<i class="fas fa-mosque block mb-1 text-sm text-emerald-500"></i> KAS MUSHOLA
 					</button>
 					<button onclick="getarTombol(); pilihBuku('ziarah')" id="btn-ziarah" class="flex-1 bg-white text-gray-500 text-[10px] font-bold py-3 px-1 rounded-lg shadow-sm border-b-4 border-gray-300 leading-tight">
-						<i class="fas fa-bus block mb-1 text-sm"></i> TAB. ZIARAH
+						<i class="fas fa-bus block mb-1 text-sm text-red-500"></i> TAB. ZIARAH
 					</button>
 				</div>
 
@@ -333,17 +336,17 @@
 		</div>
 		
 		
-		<!-- TAB PENGATURAN (v1.16.2) -->
+		<!-- TAB PENGATURAN (v1.16.3) -->
 		<div id="pengaturan" class="tab-content hidden pb-24">
 			
 			<!-- HALAMAN UTAMA PENGATURAN -->
 			<div id="setelan-utama" class="space-y-4 p-4">
-				<h2 class="text-xl font-black text-blue-600 mb-6 px-2">Pengaturan</h2>
+				<h2 class="text-xl font-black text-gray-600 mb-6 px-2">Pengaturan</h2>
 
 				<!-- Menu Database -->
 				<button onclick="getarTombol(); bukaSubSetelan('sub-database')" class="w-full flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm active:scale-95 transition-transform border border-gray-50">
 					<div class="flex items-center gap-4">
-						<div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+						<div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600">
 							<i class="fas fa-database text-lg"></i>
 						</div>
 						<div class="text-left">
@@ -357,7 +360,7 @@
 				<!-- Menu Anggota -->
 				<button onclick="getarTombol(); bukaSubSetelan('sub-anggota')" class="w-full flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm active:scale-95 transition-transform border border-gray-50">
 					<div class="flex items-center gap-4">
-						<div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600">
+						<div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-green-600">
 							<i class="fas fa-users text-lg"></i>
 						</div>
 						<div class="text-left">
@@ -371,7 +374,7 @@
 				<!-- Menu Tentang -->
 				<button onclick="getarTombol(); bukaSubSetelan('sub-tentang')" class="w-full flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm active:scale-95 transition-transform border border-gray-50">
 					<div class="flex items-center gap-4">
-						<div class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-500">
+						<div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-500">
 							<i class="fas fa-info-circle text-lg"></i>
 						</div>
 						<div class="text-left">
@@ -384,8 +387,8 @@
 
 				<!-- Footer Info -->
 				<div class="mt-8 flex flex-col items-center justify-center p-6 border-t border-dashed border-gray-200">
-					<p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Versi 1.16.0</p>
-					<p class="text-[8px] text-gray-300 italic mt-1">Sistem Kas Saku Terintegrasi</p>
+					<p class="text-[10px] font-black text-gray-500 tracking-[0.2em]">Versi Aplikasi v1.16.3</p>
+					<p class="text-[9px] text-gray-400 italic mt-1">Sistem Kas Saku Terintegrasi</p>
 				</div>
 			</div>
 
@@ -451,12 +454,12 @@
 							
 							<div class="flex gap-2">
 								<input type="tel" id="input-wa-anggota" placeholder="NOMOR WA (628...)" class="flex-1 p-4 rounded-2xl bg-gray-50 border-none text-xs font-bold focus:ring-2 focus:ring-orange-500">
-								<button onclick="getarTombol(); importKontak()" class="bg-orange-100 text-orange-600 px-5 rounded-2xl active:scale-90 transition-transform">
+								<button onclick="getarTombol(); importKontak()" class="bg-green-100 text-green-600 px-5 rounded-2xl active:scale-90 transition-transform">
 									<i class="fas fa-address-book"></i>
 								</button>
 							</div>
 
-							<button onclick="getarTombol(); tambahAnggota()" class="w-full py-4 bg-orange-500 text-white rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg shadow-orange-200 active:scale-95 transition-transform">
+							<button onclick="getarTombol(); tambahAnggota()" class="w-full py-4 bg-green-500 text-white rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg shadow-green-200 active:scale-95 transition-transform">
 								SIMPAN ANGGOTA
 							</button>
 						</div>
@@ -475,7 +478,7 @@
 				</div>
 			</div>
 
-			<!-- SUB-HALAMAN: TENTANG (v1.16.2) -->
+			<!-- SUB-HALAMAN: TENTANG (v1.16.3) -->
 			<div id="sub-tentang" class="hidden animate__animated animate__fadeInRight animate__faster">
 				<div class="p-4 flex items-center gap-3">
 					<button onclick="getarTombol(); kembaliKeSetelanUtama()" class="w-10 h-10 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 active:scale-90 transition-transform">
@@ -485,9 +488,9 @@
 				</div>
 
 				<div class="mx-4 flex flex-col items-center pb-10">
-					<!-- Logo Aplikasi -->
-					<div class="w-20 h-20 bg-blue-600 rounded-[2.5rem] shadow-xl shadow-blue-100 flex items-center justify-center mb-4 mt-4">
-						<i class="fas fa-wallet text-white text-3xl"></i>
+					<!-- Logo Aplikasi dengan Animasi -->
+					<div class="w-24 h-24 bg-white rounded-3xl shadow-lg flex items-center justify-center mb-6 mt-4 mx-auto overflow-hidden border-2 border-gray-50 transition-all duration-500 hover:scale-110 hover:rotate-3 active:scale-95 group">
+						<img src="logo.png?v1.16.3" alt="Kas Saku Logo" class="w-20 h-20 object-contain animate-soft-pulse">
 					</div>
 					
 					<h1 class="text-xl font-black text-gray-800 tracking-tight">KAS SAKU</h1>
@@ -496,19 +499,19 @@
 					<!-- Kartu Informasi Utama -->
 					<div class="w-full bg-white p-5 rounded-[2rem] shadow-sm border border-gray-50 space-y-4 mb-4">
 						<div class="flex justify-between items-center border-b border-gray-50 pb-3">
-							<span class="text-[11px] font-bold text-gray-400">Versi Saat Ini</span>
-							<span class="text-[10px] font-black text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">v1.16.2</span>
+							<span class="text-[11px] font-bold text-blue-600">Versi Saat Ini</span>
+							<span class="text-[11px] font-black text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">v1.16.3</span>
 						</div>
 						
 						<div class="flex justify-between items-center border-b border-gray-50 pb-3">
-							<span class="text-[11px] font-bold text-gray-400">Terakhir Update</span>
-							<span class="text-[11px] font-black text-gray-700">30 April 2026</span>
+							<span class="text-[11px] font-bold text-blue-600">Terakhir Update</span>
+							<span class="text-[11px] font-black text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">02 Mei 2026</span>
 						</div>
 
 						<div class="space-y-1">
-							<span class="text-[11px] font-bold text-gray-400">Deskripsi</span>
+							<span class="text-[11px] font-bold text-blue-600">Deskripsi</span>
 							<p class="text-[11px] text-gray-500 leading-relaxed font-medium">
-								Aplikasi manajemen kas mandiri yang dirancang untuk pencatatan keuangan lingkungan, tempat ibadah, dan tabungan ziarah secara efisien dan transparan.
+								Aplikasi manajemen kas mandiri yang dirancang untuk pencatatan keuangan kas lingkungan, kas mushola, dan tabungan ziarah secara efisien dan transparan.
 							</p>
 						</div>
 					</div>
@@ -517,25 +520,41 @@
 					<div class="w-full bg-white p-5 rounded-[2rem] shadow-sm border border-gray-50">
 						<div class="flex items-center gap-2 mb-3 px-1">
 							<i class="fas fa-history text-xs text-blue-500"></i>
-							<span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Riwayat Pembaruan</span>
+							<span class="text-[10px] font-black text-blue-500 uppercase tracking-widest">Riwayat Pembaruan</span>
 						</div>
 						
 						<!-- Area Scroll -->
 						<div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-4">
+							<!-- v1.16.3 -->
+							<div class="relative pl-4 border-l-2 border-red-500">
+								<div class="absolute -left-[6px] top-0 w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+								<p class="text-[10px] font-black text-red-500">v1.16.3 | 02 Mei 2026 (Terbaru)</p>
+								<p class="text-[9px] text-gray-500 mt-1 leading-relaxed">
+									• Perbaikan Bug: Sinkronisasi presisi saldo Dompet & Buku Kas.<br>
+									• Perbaikan tampilan pewarnaan.<br>
+									• Implementasi logika Anti-Duplikasi Saldo Awal pada kalkulasi mutasi.<br>
+									• Peningkatan akurasi deteksi selisih real-time antara Fisik & Buku.<br>
+									• Optimasi fungsi render data untuk performa tab Dompet yang lebih ringan.
+								</p>
+							</div>
+
 							<!-- v1.16.2 -->
 							<div class="relative pl-4 border-l-2 border-blue-500">
 								<div class="absolute -left-[6px] top-0 w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
-								<p class="text-[10px] font-black text-gray-800">v1.16.2 (Current)</p>
-								<p class="text-[9px] text-gray-500 mt-1 leading-relaxed">
+								<p class="text-[10px] font-black text-blue-600">v1.16.2 | 30 April 2026</p>
+								<p class="text-[9px] text-gray-400 mt-1 leading-relaxed">
 									• Integrasi identitas ARiA Dev Studio & Gemini AI.<br>
-									• Penambahan panel riwayat versi dengan fitur scroll.
+									• Penambahan panel riwayat versi dengan fitur scroll.<br>
+									• Pembaruan branding: Penggunaan Logo Resmi Kas Saku pada UI.<br>
+									• Implementasi Watermark Logo pada latar belakang panel.<br>
+									• Penambahan animasi halus (Soft Pulse) pada logo utama.
 								</p>
 							</div>
 
 							<!-- v1.16.1 -->
-							<div class="relative pl-4 border-l-2 border-gray-200">
-								<div class="absolute -left-[6px] top-0 w-2.5 h-2.5 bg-gray-200 rounded-full"></div>
-								<p class="text-[10px] font-black text-gray-600">v1.16.1</p>
+							<div class="relative pl-4 border-l-2 border-blue-500">
+								<div class="absolute -left-[6px] top-0 w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+								<p class="text-[10px] font-black text-blue-600">v1.16.1 | 28 April 2026</p>
 								<p class="text-[9px] text-gray-400 mt-1 leading-relaxed">
 									• Perombakan Tab Pengaturan menjadi sistem Sub-Halaman.<br>
 									• Peningkatan UI/UX pada manajemen Anggota Ziarah.
@@ -543,9 +562,9 @@
 							</div>
 
 							<!-- v1.15.24 -->
-							<div class="relative pl-4 border-l-2 border-gray-200">
-								<div class="absolute -left-[6px] top-0 w-2.5 h-2.5 bg-gray-200 rounded-full"></div>
-								<p class="text-[10px] font-black text-gray-600">v1.15.24</p>
+							<div class="relative pl-4 border-l-2 border-blue-500">
+								<div class="absolute -left-[6px] top-0 w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+								<p class="text-[10px] font-black text-blue-600">v1.15.24 | 27 April 2026</p>
 								<p class="text-[9px] text-gray-400 mt-1 leading-relaxed">
 									• Sinkronisasi otomatis saldo Dompet dengan Buku Kas.<br>
 									• Fitur ekspor/impor database JSON.
@@ -556,7 +575,7 @@
 
 					<!-- FOOTER BRANDING (ARiA x Gemini) -->
 					<div class="w-full pt-8 flex flex-col items-center">
-						<span class="text-[8px] font-black text-gray-300 uppercase tracking-[0.2em] mb-4">Developed & Powered by</span>
+						<span class="text-[8px] font-black text-gray-500 uppercase tracking-[0.2em] mb-4">Developed & Powered by</span>
 						<div class="flex items-center gap-6">
 							<!-- ARiA -->
 							<div class="flex items-center gap-2">
@@ -565,21 +584,21 @@
 								</div>
 								<div class="flex flex-col leading-none">
 									<span class="text-[10px] font-black text-gray-800">ARiA</span>
-									<span class="text-[7px] text-gray-400 font-bold tracking-tighter uppercase">Dev Studio</span>
+									<span class="text-[7px] text-gray-500 font-bold tracking-tighter uppercase">Dev Studio</span>
 								</div>
 							</div>
 							<!-- Divider -->
-							<div class="h-6 w-[1px] bg-gray-200"></div>
+							<div class="h-6 w-[1px] bg-gray-500"></div>
 							<!-- Gemini -->
 							<div class="flex items-center gap-2 opacity-60 grayscale">
 								<i class="fab fa-google text-lg"></i>
 								<div class="flex flex-col leading-none">
 									<span class="text-[10px] font-black text-gray-800 uppercase">Gemini AI</span>
-									<span class="text-[7px] text-gray-400 font-bold tracking-tighter uppercase">Core Engine</span>
+									<span class="text-[7px] text-gray-500 font-bold tracking-tighter uppercase">Core Engine</span>
 								</div>
 							</div>
 						</div>
-						<p class="mt-8 text-[9px] text-gray-300 font-bold uppercase tracking-widest">© 2026 Kas Saku Project</p>
+						<p class="mt-8 text-[9px] text-gray-500 font-bold uppercase tracking-widest">© 2026 Kas Saku Project</p>
 					</div>
 				</div>
 			</div>
@@ -896,7 +915,7 @@
 					// 1. Update Label Header (Bulan & Tahun)
 					el.innerText = `${namaBulan[periodeAktif.bulan - 1]} ${periodeAktif.tahun}`;
 
-					// 2. LOGIKA TOMBOL TUTUP BUKU (v1.16.2 - Deteksi Akhir Bulan Otomatis)
+					// 2. LOGIKA TOMBOL TUTUP BUKU (v1.16.3 - Deteksi Akhir Bulan Otomatis)
 					const btnTutup = document.getElementById('btn-tutup-buku');
 					if (btnTutup) {
 						// Kita ambil tanggal yang sedang dipilih dari input date
@@ -976,7 +995,7 @@
 				}
 				
 	
-		// --- TERMINAL NAVIGASI UTAMA (v1.16.2 Floating Version) ---
+		// --- TERMINAL NAVIGASI UTAMA (v1.16.3 Floating Version) ---
 			function openTab(evt, tabName) {
 				currentActiveTab = tabName; // Update status tab aktif saat ini
 
@@ -1056,7 +1075,7 @@
 				
 				// Arahkan ke modal masing-masing yang sudah Bapak punya
 				if (jenis === 'hutang') {
-					bukaModalHutang(); // Pastikan nama fungsi sesuai kode v1.16.2 Bapak
+					bukaModalHutang(); // Pastikan nama fungsi sesuai kode v1.16.3 Bapak
 				} 
 				else if (jenis === 'bank') {
 					bukaModalBank();
@@ -1290,7 +1309,7 @@
 				// Gunakan parseFloat dan pastikan ada nilai fallback 0
     			const saldoAwalOtomatis = parseFloat(hitungSaldoLalu()) || 0;
 
-				// --- 2. FILTER TRANSAKSI BULAN INI SAJA (Update v1.16.2) ---
+				// --- 2. FILTER TRANSAKSI BULAN INI SAJA (Update v1.16.3) ---
 				const dataBulanIni = dataBuku.filter(t => {
 					const d = new Date(t.tanggal);
 					// Paksa ke Number untuk perbandingan yang akurat
@@ -1419,7 +1438,7 @@
 			}
 	
 		
-		// --- FUNGSI PROSES TUTUP BUKU (v1.16.2 - Full Anti-Double Bulanan & Tahunan) ---
+		// --- FUNGSI PROSES TUTUP BUKU (v1.16.3 - Full Anti-Double Bulanan & Tahunan) ---
 			function prosesTutupBuku() {
 				const tahunSekarang = parseInt(periodeAktif.tahun);
 				const bulanSekarang = parseInt(periodeAktif.bulan);
@@ -1492,7 +1511,7 @@
 			}
 	
 	
-		// --- FUNGSI PILIH BUKU (v1.16.2 Updated) ---
+		// --- FUNGSI PILIH BUKU (v1.16.3 Updated) ---
 			function pilihBuku(jenis) {
 				bukuAktif = jenis;
 
@@ -2161,7 +2180,7 @@ ${rincian}
 
 _Terima kasih sudah menabung._
 _Simpan pesan ini sebagai bukti sah._
-_Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
+_Tabungan dicatat via Aplikasi Kas Saku v1.16.3_`;
 
 				// 7. Eksekusi Kirim (Gunakan encodeURIComponent agar simbol aman)
 				const url = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
@@ -2265,28 +2284,31 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 				daftarBuku.forEach(kas => {
 					const target = kas.toLowerCase().trim();
 
-					// 1. SALDO BUKU (DARI TRANSAKSI) - Versi Anti-Dobel Januari
-						const sBuku = dbTransaksi
-							.filter(t => t.buku && t.buku.toLowerCase().trim() === target)
-							.reduce((acc, curr) => {
-								// Ambil data bulan dari tanggal (format yyyy-mm-dd atau dd-mm-yyyy)
-								// Kita pastikan ambil bagian bulannya saja
-								const parts = curr.tanggal.split('-');
-								const bulan = parts[1]; // Mengambil posisi bulan
-								const isJanuari = (bulan === '01');
-								
-								// Cek apakah keterangan mengandung kata "saldo awal"
-								const isSaldoAwal = curr.keterangan && curr.keterangan.toLowerCase().includes("saldo awal");
+					// 1. Ambil data mentah langsung dari sumber agar tidak 0
+    const semuaTransaksi = dbTransaksi || [];
+    const semuaSaldoAwal = dbSaldoAwal || [];
 
-								// LOGIKA: Jika transaksi adalah "Saldo Awal" di bulan JANUARI, 
-								// abaikan nominalnya (anggap 0) karena sudah ada di dbSaldoAwal
-								if (isJanuari && isSaldoAwal) {
-									return acc; 
-								}
+    // 2. Filter transaksi khusus untuk buku ini
+    const dataBuku = semuaTransaksi.filter(t => t.buku && t.buku.toLowerCase().trim() === target);
 
-								// Jika bukan saldo awal januari, hitung normal
-								return curr.tipe === 'masuk' ? acc + (Number(curr.nominal) || 0) : acc - (Number(curr.nominal) || 0);
-							}, 0);
+    // 3. Ambil Saldo Awal dari database (dbSaldoAwal)
+    const awal = semuaSaldoAwal.find(s => s.buku && s.buku.toLowerCase().trim() === target);
+    const nominalAwal = awal ? (Number(awal.nominal) || 0) : 0;
+
+    // 4. Hitung Mutasi (Masuk - Keluar)
+    // KUNCI: Kita abaikan transaksi yang punya keterangan "SALDO AWAL" agar tidak dobel
+    const mutasi = dataBuku.reduce((acc, curr) => {
+        const isSaldoAwalManual = curr.keterangan && curr.keterangan.toUpperCase().includes("SALDO") && 
+                                  curr.keterangan.toUpperCase().includes("AWAL");
+        
+        if (isSaldoAwalManual) return acc; // Lewati jika itu transaksi saldo awal di riwayat
+
+        const nilai = Number(curr.nominal) || 0;
+        return curr.tipe === 'masuk' ? acc + nilai : acc - nilai;
+    }, 0);
+
+    // 5. Total Saldo Akhir Buku
+    const sBuku = nominalAwal + mutasi;
 
 					// 2. SALDO FISIK (BANK + TUNAI - HUTANG)
 					// Menggunakan .includes() karena di database tertulis "KAS LINGKUNGAN (BANK)"
@@ -2342,9 +2364,9 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 						<div class="flex justify-between items-center mb-5">
 							<div>
 								<h3 class="text-[11px] font-black text-gray-800 uppercase tracking-widest flex items-center">
-									<i class="fas fa-microscope mr-2 text-blue-500"></i> CEK SELISIH
+									<i class="fas fa-search mr-2 text-blue-500"></i> CEK SELISIH
 								</h3>
-								<p class="text-[9px] text-gray-400 font-bold italic uppercase tracking-tighter">Buku Kas & Fisik Uang</p>
+								<p class="text-[9px] text-gray-400 tracking-tighter">Buku Kas & Fisik Uang</p>
 							</div>
 							<span class="px-3 py-1 ${totalSelisihGlobal === 0 ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'} rounded-lg text-[9px] font-black uppercase">
 								${totalSelisihGlobal === 0 ? '✓ Data Sesuai' : '⚠ Ada Selisih'}
@@ -2352,10 +2374,10 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 						</div>
 
 						<div class="space-y-4">
-							<div class="bg-gray-50/80 p-3 rounded-2xl border border-gray-100">
-								<div class="flex justify-between text-[10px] font-black mb-2 border-b pb-1">
-									<span class="text-gray-500 uppercase">Total Saldo Buku Kas</span>
-									<span class="text-gray-800">Rp ${formatRupiah(grandTotalBukuCatatan)}</span>
+							<div class="bg-emerald-50/50 p-3 rounded-2xl border border-emerald-100">
+								<div class="flex justify-between text-[10px] font-black mb-2 border-b border-emerald-200 pb-1">
+									<span class="text-emerald-500 uppercase">Total Saldo Buku Kas</span>
+									<span class="text-emerald-700">Rp ${formatRupiah(grandTotalBukuCatatan)}</span>
 								</div>
 								<div class="space-y-1">${listRincianBuku}</div>
 							</div>
@@ -2370,12 +2392,12 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 
 							<div class="pt-3">
 								<div class="flex justify-between items-center px-1 mb-3">
-									<span class="text-[20px] font-black text-gray-600 uppercase">Total Selisih :</span>
+									<span class="text-[20px] font-black text-orange-600 uppercase">Total Selisih :</span>
 									<span class="text-lg font-black ${totalSelisihGlobal < 0 ? 'text-red-600' : (totalSelisihGlobal > 0 ? 'text-orange-600' : 'text-green-600')} tracking-tighter">
 										Rp ${formatRupiah(totalSelisihGlobal)}
 									</span>
 								</div>
-								<div class="bg-gray border-2 border-gray-50 rounded-2xl p-3 space-y-1">
+								<div class="bg-orange-50/50 border-2 border-orange-100 rounded-2xl p-3 space-y-1">
 									${listRincianSelisih}
 								</div>
 							</div>
@@ -2386,7 +2408,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 		
 		
 		
-		// --- FUNGSI BUKA MODAL v1.16.2 ---
+		// --- FUNGSI BUKA MODAL v1.16.3 ---
 			function bukaModalHutang() {
 				const modal = document.getElementById('modal-hutang');
 				if (!modal) return;
@@ -2611,10 +2633,10 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 				const dataSorted = [...dbDompet.hutang].sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
 
 				container.innerHTML = dataSorted.map(h => `
-					<div class="flex justify-between items-center border-b border-gray-50 p-4 last:border-0 hover:bg-gray-50/50 transition-all">
+					<div class="flex justify-between items-center border-b border-red-50 p-4 last:border-0 hover:bg-red-50/50 transition-all">
 						<div class="flex-1">
 							<div class="flex items-center gap-2 mb-1">
-								<span class="text-[7px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded font-black uppercase">${h.tanggal}</span>
+								<span class="text-[7px] bg-red-100 text-red-500 px-1.5 py-0.5 rounded font-black uppercase">${h.tanggal}</span>
 								<span class="text-[7px] bg-blue-50 text-blue-500 px-1.5 py-0.5 rounded font-black uppercase">${h.buku}</span>
 							</div>
 							<p class="text-[11px] font-black text-gray-700 uppercase tracking-tight">${h.nama}</p>
@@ -2626,7 +2648,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 							</div>
 							
 							<div class="flex gap-1">
-								<button onclick="getarTombol(); bukaModalBayarHutang(${h.id})" class="w-8 h-8 bg-green-100 text-green-600 rounded-xl flex items-center justify-center active:scale-90 transition-all shadow-sm shadow-green-100">
+								<button onclick="getarTombol(); bukaModalBayarHutang(${h.id})" class="w-8 h-8 bg-red-100 text-red-500 rounded-xl flex items-center justify-center active:scale-90 transition-all shadow-sm shadow-green-100">
 									<i class="fas fa-hand-holding-dollar text-sm"></i>
 								</button>
 
@@ -3476,7 +3498,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 					return;
 				}
 
-				// 2. Header Pesan (v1.16.2 Style)
+				// 2. Header Pesan (v1.16.3 Style)
 				let pesan = `*[ LAPORAN KAS ${buku} ]*\n`;
 				pesan += `*PERIODE: ${periode}*\n\n`;
 				pesan += `========== RINCIAN KAS ==========\n\n`;
@@ -3508,7 +3530,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 				pesan += `*TOTAL MASUK : Rp ${formatRupiah(totalMasuk)}*\n`;
 				pesan += `*TOTAL KELUAR : Rp ${formatRupiah(totalKeluar)}*\n`;
 				pesan += `*SALDO AKHIR : Rp ${formatRupiah(totalMasuk - totalKeluar)}*\n\n`;
-				pesan += `_Laporan dicatat via Aplikasi Kas Saku v1.16.2_\n\n`;
+				pesan += `_Laporan dicatat via Aplikasi Kas Saku v1.16.3_\n\n`;
 
 				// 6. Kirim ke WA (Gunakan window.open agar lebih stabil di Mobile)
 				const urlWA = `https://wa.me/?text=${encodeURIComponent(pesan)}`;
@@ -3517,7 +3539,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 		
 		
 
-		/* KONTROL NAVIGASI v1.16.2 */
+		/* KONTROL NAVIGASI v1.16.3 */
 			function bukaSubSetelan(idSub) {
 				getarTombol();
 				// Sembunyikan Menu Utama Pengaturan
@@ -3553,7 +3575,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 					const backupData = {
 						metadata: {
 							aplikasi: "Kas Saku New",
-							versi: "v1.16.2",
+							versi: "v1.16.3",
 							waktu: new Date().toLocaleString('id-ID')
 						},
 						// Mengambil dari variabel global yang Bapak pakai di saveAllData
@@ -3573,7 +3595,7 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 					// 2. Buat Nama File Dinamis (Contoh: BACKUP_KAS_2026-04-18.json)
 					const d = new Date();
 					const tgl = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-					const namaFile = `BACKUP_KAS_${tgl}.json`;
+					const namaFile = `BACKUP_KASSAKU_${tgl}.json`;
 
 					const link = document.createElement('a');
 					link.href = url;
@@ -4166,8 +4188,8 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
 						<i class="fas fa-university text-xl"></i>
 					</div>
 					<div class="text-left">
-						<p class="font-black text-green-600 text-xs uppercase">Update Bank</p>
-						<p class="text-[10px] text-green-400 font-bold">Sinkronisasi saldo rekening bank</p>
+						<p class="font-black text-green-600 text-xs uppercase">Input Bank</p>
+						<p class="text-[10px] text-green-400 font-bold">Catat saldo rekening bank</p>
 					</div>
 				</button>
 
@@ -4489,6 +4511,16 @@ _Pesan dicatat via Aplikasi Kas Saku v1.16.2_`;
     		to { transform: translateY(100%); opacity: 0; }
 		}
 		.animate-slide-down { animation: slide-down 0.2s ease-in forwards; }
+
+		/* Animasi logo */
+		@keyframes soft-pulse {
+			0% { transform: scale(1); }
+			50% { transform: scale(1.30); }
+			100% { transform: scale(1); }
+		}
+		.animate-soft-pulse {
+			animation: soft-pulse 3s ease-in-out infinite;
+		}
 	</style>
 	
 </body>
